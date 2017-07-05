@@ -60,3 +60,23 @@ if os.environ['USER'] in ['tomc']:
     analysis_results           = "/user/tomc/StopsDilepton/results_80X_v35"
     # Release for limit calculation (seems the 74X release is now also recommended for users)
     combineReleaseLocation     = '/user/tomc/StopsDilepton/CMSSW_7_4_7/src/'
+
+# change the paths accordingly
+if os.environ['USER'] in ['newUser']:
+    # Where you store cmg output, basically obsolete now (no need to change)
+    cmg_directory      = "/scratch/rschoefbeck/cmgTuples/80X_1l_9"
+    # Where postprocessed data goes. Either add your own path, or use the ones produced by Daniel
+    data_output_directory      = "/afs/hephy.at/data/dspitzbart02/cmgTuples/"
+    # Where you store the data. Either add your own path, or use the ones produced by Daniel
+    data_directory      = "/afs/hephy.at/data/dspitzbart02/cmgTuples/"
+    # Where the plots go
+    plot_directory      = "/afs/hephy.at/user/d/dspitzbart/www/stopsDilepton/"
+    # Analysis result files
+    analysis_results        = '/afs/hephy.at/data/dspitzbart02/StopsDilepton/results/80X_v35' #Path to analysis results
+    dpm_directory           = '/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/'
+    cern_proxy_certificate  = '/afs/cern.ch/user/d/dspitzba/private/.proxy'
+    # 715 release for limit calculation 
+    combineReleaseLocation = '/afs/hephy.at/work/d/dspitzbart/stops/CMSSW_7_4_7/src'
+    runOnGentT2 = False
+
+

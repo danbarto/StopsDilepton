@@ -1,65 +1,10 @@
 #! /bin/sh
 
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016B_03Feb2017_v2 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016B_03Feb2017_v2 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016B_03Feb2017_v2 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016B_03Feb2017_v2 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016B_03Feb2017_v2 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016B_03Feb2017_v2 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016B_03Feb2017_v2 --triggerSelection=e_for_ee #SPLIT10
-
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016C_03Feb2017 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016C_03Feb2017 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016C_03Feb2017 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016C_03Feb2017 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016C_03Feb2017 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016C_03Feb2017 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016C_03Feb2017 --triggerSelection=e_for_ee #SPLIT10
-
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016D_03Feb2017 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016D_03Feb2017 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016D_03Feb2017 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016D_03Feb2017 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016D_03Feb2017 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016D_03Feb2017 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016D_03Feb2017 --triggerSelection=e_for_ee #SPLIT10
-
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016E_03Feb2017 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016E_03Feb2017 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016E_03Feb2017 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016E_03Feb2017 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016E_03Feb2017 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016E_03Feb2017 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016E_03Feb2017 --triggerSelection=e_for_ee #SPLIT10
-
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016F_03Feb2017 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016F_03Feb2017 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016F_03Feb2017 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016F_03Feb2017 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016F_03Feb2017 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016F_03Feb2017 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016F_03Feb2017 --triggerSelection=e_for_ee #SPLIT10
-
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016G_03Feb2017 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016G_03Feb2017 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016G_03Feb2017 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016G_03Feb2017 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016G_03Feb2017 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016G_03Feb2017 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016G_03Feb2017 --triggerSelection=e_for_ee #SPLIT10
-
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016H_03Feb2017_v2 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016H_03Feb2017_v2 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016H_03Feb2017_v2 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016H_03Feb2017_v2 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016H_03Feb2017_v2 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016H_03Feb2017_v2 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016H_03Feb2017_v2 --triggerSelection=e_for_ee #SPLIT10
-
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleMuon_Run2016H_03Feb2017_v3 --triggerSelection=mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016H_03Feb2017_v3 --triggerSelection=mu_for_mumu #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples MuonEG_Run2016H_03Feb2017_v3 --triggerSelection=mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016H_03Feb2017_v3 --triggerSelection=e_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleMuon_Run2016H_03Feb2017_v3 --triggerSelection=mu_for_mue #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples DoubleEG_Run2016H_03Feb2017_v3 --triggerSelection=ee #SPLIT10
-python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_v37 --skim=dilepTiny  --samples SingleElectron_Run2016H_03Feb2017_v3 --triggerSelection=e_for_ee #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016B_03Feb2017_v2 --triggerSelection=mumu #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016C_03Feb2017 --triggerSelection=mumu #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016D_03Feb2017 --triggerSelection=mumu #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016E_03Feb2017 --triggerSelection=mumu #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016F_03Feb2017 --triggerSelection=mumu #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016G_03Feb2017 --triggerSelection=mumu #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016H_03Feb2017_v2 --triggerSelection=mumu #SPLIT10
+python cmgPostProcessing.py --keepAllJets  --processingEra=postProcessed_80X_SD --skim=dilepTiny  --samples DoubleMuon_Run2016H_03Feb2017_v3 --triggerSelection=mumu #SPLIT10

@@ -138,50 +138,16 @@ proxy_path = os.path.expandvars('$HOME/private/.proxy')
 proxy = renew_proxy( proxy_path )
 logger.info( "Using proxy %s"%proxy )
 
-## MC
-#mc_cache_file = '/afs/hephy.at/data/rschoefbeck01/StopsDilepton/dpm_sample_caches/80X_1l_MC.pkl'
-##mc_cache_file = '/afs/hephy.at/data/dspitzbart01/StopsDilepton/dpm_sample_caches/80X_1l_MC.pkl'
-#robert = ['/dpm/oeaw.ac.at/home/cms/store/user/schoef/cmgTuples/80X_1l_21', '/dpm/oeaw.ac.at/home/cms/store/user/schoef/cmgTuples/80X_1l_22']
-#daniel = ['/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_1l_21']
-#mc_dpm_directories = robert + daniel
-#from CMGTools.RootTools.samples.samples_13TeV_RunIISpring16MiniAODv2 import mcSamples as heppy_mc_samples
-#mc_heppy_mapper = heppy_mapper( heppy_mc_samples, mc_dpm_directories, mc_cache_file)
-
 # Moriond MC
-mc_cache_file = '/afs/hephy.at/data/dspitzbart01/StopsDilepton/dpm_sample_caches/80X_1l_MC_Moriond.pkl'
-#robert = ['/dpm/oeaw.ac.at/home/cms/store/user/schoef/cmgTuples/80X_1l_21', '/dpm/oeaw.ac.at/home/cms/store/user/schoef/cmgTuples/80X_1l_22']
-daniel = ['/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_1l_30', '/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_1l_31', '/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_1l_36']
+mc_cache_file = '/afs/hephy.at/data/dspitzbart01/StopsDilepton/dpm_sample_caches/80X_1l_MC_slimmedDown.pkl'
+daniel = ['/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_1l_SD_1']
 mc_Moriond_dpm_directories = daniel
 from CMGTools.RootTools.samples.samples_13TeV_RunIISummer16MiniAODv2 import mcSamples as heppy_mc_Moriond_samples
 mc_heppy_mapper = heppy_mapper( heppy_mc_Moriond_samples, mc_Moriond_dpm_directories, mc_cache_file)
 
-
 # Data
-data_cache_file = '/afs/hephy.at/data/rschoefbeck01/StopsDilepton/dpm_sample_caches/80X_1l_data.pkl'
-def_robert = "/dpm/oeaw.ac.at/home/cms/store/user/schoef/cmgTuples/80X_1l_20/"
-def_daniel = "/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_1l_24/"
-data_dpm_directories = [def_robert, def_daniel]
+data_cache_file = '/afs/hephy.at/data/dspitzbart01/StopsDilepton/dpm_sample_caches/80X_1l_data_slimmedDown.pkl'
+def_daniel = ["/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_1l_SD_1/"]
+data_dpm_directories = def_daniel
 from CMGTools.RootTools.samples.samples_13TeV_DATA2016 import dataSamples as heppy_data_samples
 data_heppy_mapper = heppy_mapper( heppy_data_samples, data_dpm_directories, data_cache_file)
-
-# Data ReminiAOD
-data_cache_file = '/afs/hephy.at/data/rschoefbeck01/StopsDilepton/dpm_sample_caches/80X_1l_data_03Feb2017.pkl'
-def_robert = "/dpm/oeaw.ac.at/home/cms/store/user/schoef/cmgTuples/80X_1l_31"
-data_dpm_directories = [def_robert]
-from CMGTools.RootTools.samples.samples_13TeV_DATA2016 import dataSamples as heppy_data_samples
-data_03Feb2017_heppy_mapper = heppy_mapper( heppy_data_samples, data_dpm_directories, data_cache_file)
-
-# TTbar DM signal
-ttbarDM_cache_file = '/afs/hephy.at/data/dspitzbart01/StopsDilepton/dpm_sample_caches/80X_0l_TTbarDM.pkl'
-#def_robert_0l = '/dpm/oeaw.ac.at/home/cms/store/user/schoef/cmgTuples/80X_0l_23'
-def_daniel_0l = '/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_0l_32'
-ttbarDM_dpm_directories = [ def_daniel_0l ]
-from CMGTools.StopsDilepton.TTbarDMJets_signals_RunIISummer16MiniAODv2 import samples as heppy_TTbarDM_samples
-ttbarDM_heppy_mapper = heppy_mapper( heppy_TTbarDM_samples, ttbarDM_dpm_directories, ttbarDM_cache_file)
-
-# SUSY Signal
-SUSY_cache_file = '/afs/hephy.at/data/dspitzbart01/StopsDilepton/dpm_sample_caches/80X_0l_SUSY.pkl'
-def_daniel_0l = '/dpm/oeaw.ac.at/home/cms/store/user/dspitzba/cmgTuples/80X_0l_35/'
-SUSY_dpm_directories = [ def_daniel_0l ]
-from CMGTools.RootTools.samples.samples_13TeV_signals import samples as heppy_SUSY_samples
-SUSY_heppy_mapper = heppy_mapper( heppy_SUSY_samples, SUSY_dpm_directories, SUSY_cache_file)
