@@ -27,8 +27,6 @@ argParser.add_argument('--noData',             action='store_true', default=Fals
 argParser.add_argument('--small',                                   action='store_true',     help='Run only on a small subset of the data?', )
 argParser.add_argument('--plot_directory',     action='store',      default='analysisPlots_test')
 argParser.add_argument('--selection',          action='store',      default='relIso0.12-looseLeptonVeto-mll20-onZ')
-argParser.add_argument('--splitBosons',        action='store_true', default=False)
-argParser.add_argument('--splitBosons2',       action='store_true', default=False)
 argParser.add_argument('--badMuonFilters',     action='store',      default="Summer2016",  help="Which bad muon filters" )
 argParser.add_argument('--unblinded',          action='store_true', default=False)
 argParser.add_argument('--isr',                action='store_true', default=False)
@@ -44,8 +42,6 @@ logger_rt = logger_rt.get_logger(args.logLevel, logFile = None)
 
 if args.small:                        args.plot_directory += "_small"
 if args.noData:                       args.plot_directory += "_noData"
-if args.splitBosons:                  args.plot_directory += "_splitMultiBoson"
-if args.splitBosons2:                 args.plot_directory += "_splitMultiBoson2"
 if args.signal == "DM":               args.plot_directory += "_DM"
 if args.badMuonFilters!="Summer2016": args.plot_directory += "_badMuonFilters_"+args.badMuonFilters
 #
@@ -141,8 +137,7 @@ for index, mode in enumerate(allModes):
   else:
     weight_ = lambda event, sample: event.weight
 
-  multiBosonList = [WWNo2L2Nu, WZ, ZZNo2L2Nu, VVTo2L2Nu, triBoson] if args.splitBosons else ([WW, WZ, ZZ, triBoson] if args.splitBosons2 else [multiBoson])
-  mc             = [ Top_pow, TTZ, TTXNoZ] + multiBosonList + [DY_HT_LO]
+  mc = [TTJets_LO, DY_LO, diBosonInclusive]
 
   for sample in mc: sample.style = styles.fillStyle(sample.color)
 
@@ -430,41 +425,25 @@ for index, mode in enumerate(allModes):
   dataMCScale        = yields[mode]["data"]/yields[mode]["MC"] if yields[mode]["MC"] != 0 else float('nan')
 
   drawPlots(plots, mode, dataMCScale)
-  makePieChart(os.path.join(plot_directory, args.plot_directory, mode, args.selection), "pie_chart",    yields, mode, mc)
-  makePieChart(os.path.join(plot_directory, args.plot_directory, mode, args.selection), "pie_chart_VV", yields, mode, multiBosonList)
   allPlots[mode] = plots
 
 # Add the different channels into SF and all
-for mode in ["SF","all"]:
-  yields[mode] = {}
-  for y in yields[allModes[0]]:
-    try:    yields[mode][y] = sum(yields[c][y] for c in (['ee','mumu'] if mode=="SF" else ['ee','mumu','mue']))
-    except: yields[mode][y] = 0
-  dataMCScale = yields[mode]["data"]/yields[mode]["MC"] if yields[mode]["MC"] != 0 else float('nan')
-
-  for plot in allPlots['mumu']:
-    for plot2 in (p for p in (allPlots['ee'] if mode=="SF" else allPlots["mue"]) if p.name == plot.name):  #For SF add EE, second round add EMu for all
-      for i, j in enumerate(list(itertools.chain.from_iterable(plot.histos))):
-	for k, l in enumerate(list(itertools.chain.from_iterable(plot2.histos))):
-	  if i==k:
-	    j.Add(l)
-
-  drawPlots(allPlots['mumu'], mode, dataMCScale)
-  makePieChart(os.path.join(plot_directory, args.plot_directory, mode, args.selection), "pie_chart",    yields, mode, mc)
-  makePieChart(os.path.join(plot_directory, args.plot_directory, mode, args.selection), "pie_chart_VV", yields, mode, multiBosonList)
-
-# Write to tex file
-columns = [i.name for i in mc] + ["MC", "data"] + ([DM.name, DM2.name] if args.signal=="DM" else []) + ([T2tt.name, T2tt2.name] if args.signal=="T2tt" else [])
-texdir = "tex"
-#if args.powheg: texdir += "_powheg"
-try:
-  os.makedirs("./" + texdir)
-except:
-  pass
-with open("./" + texdir + "/" + args.selection + ".tex", "w") as f:
-  f.write("&" + " & ".join(columns) + "\\\\ \n")
-  for mode in allModes + ["SF","all"]:
-    f.write(mode + " & " + " & ".join([ (" %12.0f" if i == "data" else " %12.2f") % yields[mode][i] for i in columns]) + "\\\\ \n")
+if len(allModes) == 3: #just added for slimmedPlots since we only use doubleMu channel
+    for mode in ["SF","all"]:
+      yields[mode] = {}
+      for y in yields[allModes[0]]:
+        try:    yields[mode][y] = sum(yields[c][y] for c in (['ee','mumu'] if mode=="SF" else ['ee','mumu','mue']))
+        except: yields[mode][y] = 0
+      dataMCScale = yields[mode]["data"]/yields[mode]["MC"] if yields[mode]["MC"] != 0 else float('nan')
+    
+      for plot in allPlots['mumu']:
+        for plot2 in (p for p in (allPlots['ee'] if mode=="SF" else allPlots["mue"]) if p.name == plot.name):  #For SF add EE, second round add EMu for all
+          for i, j in enumerate(list(itertools.chain.from_iterable(plot.histos))):
+    	    for k, l in enumerate(list(itertools.chain.from_iterable(plot2.histos))):
+    	        if i==k:
+    	            j.Add(l)
+    
+    drawPlots(allPlots['mumu'], mode, dataMCScale)
 
 logger.info( "Done with prefix %s and selectionString %s", args.selection, cutInterpreter.cutString(args.selection) )
 
